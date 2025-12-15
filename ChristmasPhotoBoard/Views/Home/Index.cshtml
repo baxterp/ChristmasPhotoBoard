@@ -1,0 +1,50 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Christmas Photo Board";
+    Layout = "/Pages/Shared/_Layout.cshtml";
+    var images = Model;
+}
+
+<div class="row g-4" style="padding-top: 20px">
+    @foreach(var imageUrl in images)
+    {
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card shadow-sm">
+                <img src="@imageUrl" class="img-fluid rounded" alt="Xmas">
+            </div>
+        </div>
+    }
+
+    @*    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 1">
+        </div>
+    </div>
+
+     <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 2">
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 3">
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 1">
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 2">
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card shadow-sm">
+            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 3">
+        </div>
+    </div>
+ *@
+</div>
