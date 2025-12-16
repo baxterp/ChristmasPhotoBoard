@@ -11,13 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Images\20230925-16035668.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

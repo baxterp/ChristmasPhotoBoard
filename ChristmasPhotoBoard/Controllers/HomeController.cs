@@ -14,9 +14,9 @@ namespace ChristmasPhotoBoard.Controllers
         public IActionResult Index()
         {
             var baseUrl = $"{Request.Scheme}://{Request.Host}/";
-            var relativeDir = "Images";
+            var relativeDir = "images";
 
-            var fileURLs = Directory.GetFiles("Images")
+            var fileURLs = Directory.GetFiles("wwwroot/images")
                 .Select(Path.GetFileName)
                 .Where(name => !string.IsNullOrEmpty(name))
                 .Select(name => $"{baseUrl}{relativeDir}/{name}")
@@ -40,7 +40,7 @@ namespace ChristmasPhotoBoard.Controllers
             }
 
             var filename = file.FileName.Split('.').FirstOrDefault() + DateTime.Now.ToString("-HHmmssff") + "." + fileExtension;
-            var filePath = "Images/" + filename;
+            var filePath = "wwwroot/images/" + filename;
 
             Image img;
             using (var reader = new StreamReader(file.OpenReadStream()))

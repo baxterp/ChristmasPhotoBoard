@@ -8,9 +8,11 @@
 <div class="row g-4" style="padding-top: 20px">
     @foreach(var imageUrl in images)
     {
+        //var fileUrl = Url.Content($"~/Images/{imageUrl}");
+        var fileUrl = $"{imageUrl}";
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card shadow-sm">
-                <img src="@imageUrl" class="img-fluid rounded" alt="Xmas">
+                <img src="@fileUrl" class="img-fluid rounded" alt="Xmas">
             </div>
         </div>
     }
