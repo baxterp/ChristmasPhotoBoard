@@ -5,48 +5,14 @@
     var images = Model;
 }
 
-<div class="row g-4" style="padding-top: 20px">
+<div class="row g-4" style="padding-top: 20px; padding-bottom: 20px">
     @foreach(var imageUrl in images)
     {
-        //var fileUrl = Url.Content($"~/Images/{imageUrl}");
         var fileUrl = $"{imageUrl}";
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-sm-6 col-md-8 col-lg-4">
             <div class="card shadow-sm">
-                <img src="@fileUrl" class="img-fluid rounded" alt="Xmas">
+                <a class="lightboxImg" href="@fileUrl"><img src="@fileUrl" class="img-fluid rounded" alt="Xmas"></a>
             </div>
         </div>
     }
-
-    @*    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 1">
-        </div>
-    </div>
-
-     <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 2">
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 3">
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 1">
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 2">
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card shadow-sm">
-            <img src="https://images.pexels.com/photos/30877151/pexels-photo-30877151.jpeg" class="img-fluid rounded" alt="Deskripsi Gambar 3">
-        </div>
-    </div>
- *@
 </div>

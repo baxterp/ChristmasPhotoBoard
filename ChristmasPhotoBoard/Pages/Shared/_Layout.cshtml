@@ -5,39 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ChristmasPhotoBoard</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/darkly.bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/snow/css/snow.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/jquery.fallingsnow.css" />
+    <link rel="stylesheet" href="~/css/jquery.lightbox.css" />
     <link rel="stylesheet" href="~/ChristmasPhotoBoard.styles.css" asp-append-version="true" />
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" >
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Family Christmas Photo Board</a>
-                <input type="file" class="form-control btn fileInput" id="fileInput"
-                       onchange="javascript:ImageUpload()" />
-
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+    <div id="snow">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">Family Christmas Photo Board</a>
+                    <input type="file" class="form-control btn fileInput" id="fileInput" accept=".bmp, .png, .jpg, .jpeg, .gif, .tiff"
+                            onchange="javascript:ImageUpload()" />
+                </div>
+            </nav>
+        </header>
         <div class="container">
-            &copy; @DateTime.Now.Year - Family Christmas Photo Board
+            <main role="main">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
 
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; @DateTime.Now.Year - Family Christmas Photo Board
+            </div>
+        </footer>
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/snow/js/snow.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/js/jquery.fallingsnow.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.lightbox.js" asp-append-version="true"></script>
+    <script>
+        $("#snow" ).fallingSnow();
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

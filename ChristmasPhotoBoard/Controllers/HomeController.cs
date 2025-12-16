@@ -16,11 +16,13 @@ namespace ChristmasPhotoBoard.Controllers
             var baseUrl = $"{Request.Scheme}://{Request.Host}/";
             var relativeDir = "images";
 
-            var fileURLs = Directory.GetFiles("wwwroot/images")
-                .Select(Path.GetFileName)
-                .Where(name => !string.IsNullOrEmpty(name))
-                .Select(name => $"{baseUrl}{relativeDir}/{name}")
-                .ToList();
+            var files = Directory.GetFiles("wwwroot/images")
+                        .OrderByDescending(f => new FileInfo(f).CreationTime);
+
+            var fileURLs = files.Select(Path.GetFileName)
+                            .Where(name => !string.IsNullOrEmpty(name))
+                            .Select(name => $"{baseUrl}{relativeDir}/{name}")
+                            .ToList();
 
             return View(fileURLs);
         }
@@ -84,13 +86,6 @@ namespace ChristmasPhotoBoard.Controllers
                 {
                     file.CopyTo(output);
                 }
-
-                //using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                //{
-                //    img = Image.FromStream(fileStream, useEmbeddedColorManagement: true, validateImageData: true);
-                //    width = img.Width;
-                //    height = img.Height;
-                //}
             }
 
             return Ok();
