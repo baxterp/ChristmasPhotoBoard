@@ -57,18 +57,18 @@ namespace ChristmasPhotoBoard.Controllers
             var width = img.Width;
             var height = img.Height;
 
-            if ((width * height) > 1000000)
+            if ((width > 1000 || height > 1000))
             {
                 int newHeight = 0;
                 int newWidth = 0;
 
-                if (height > 1000)
+                if (width > 1000)
                 {
                     newWidth = 1000;
                     newHeight = (int)(((double)height / (double)width) * 1000);
 
                 }
-                else if (width > 1000)
+                else if (height > 1000)
                 {
                     newHeight = 1000;
                     newWidth = (int)(((double)width / (double)height) * 1000);

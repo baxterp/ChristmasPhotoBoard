@@ -40,9 +40,11 @@ function ImageUpload() {
     });
 }
 
-$(document).ready(function () {
-
+$(function () {
   var lightboxImg = $("a.lightboxImg");
   lightboxImg.lightbox();
 
+  $("#snow").fallingSnow();
+
+  $('.lazy').Lazy();
 });

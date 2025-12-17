@@ -9,9 +9,10 @@
     @foreach(var imageUrl in images)
     {
         var fileUrl = $"{imageUrl}";
-        <div class="col-sm-6 col-md-8 col-lg-4">
+        @* <div class="col-sm-6 col-md-8 col-lg-4"> *@
+         <div class="col-12 col-sm-6 col-md-6 col-lg-4">
             <div class="card shadow-sm">
-                <a class="lightboxImg" href="@fileUrl"><img src="@fileUrl" class="img-fluid rounded" alt="Xmas"></a>
+                <a class="lightboxImg" href="@fileUrl"><img src="@fileUrl" class="img-fluid rounded lazy" alt="Xmas"></a>
             </div>
         </div>
     }
