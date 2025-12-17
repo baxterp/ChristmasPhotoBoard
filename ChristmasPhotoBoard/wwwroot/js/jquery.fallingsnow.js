@@ -27,12 +27,12 @@
 
 			// tweak the general size of the snowflakes. 
 			// 0.1 is smaller, e.g. 2 is larger. Decimals are allowed
-			thicknessAdjust: 1,
+			thicknessAdjust: 1.2,
 
 			// set the deviation from the initial point of falling 
 			// this makes the snowflake start at a random new point
 			// but also causes some drift when falling
-			drift: 300,
+			drift: 100,
 
 			// set different opacities. If true then three different
 			// opacities are created for the snowflakes: 1, 0.8 and 0.7

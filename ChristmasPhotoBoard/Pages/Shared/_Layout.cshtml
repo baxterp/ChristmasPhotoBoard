@@ -14,30 +14,14 @@
 <body>
     <div id="snow">
         <div class="container">
-@*             <header>
-                <nav class="navbar bg-primary" data-bs-theme="dark">
-                    <div class="flex-wrap d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center flex-wrap" style="min-width:0;padding:5px">
-                            <img src="https://img.icons8.com/emoji/48/000000/santa-claus-emoji.png" alt="Santa" style="height:48px;width:48px;margin-right:12px;flex-shrink:0;" />
-                            <span class="navbar-brand mb-0 h1 text-wrap" style="font-size:2rem; color: #fff; font-family: 'Segoe Script', cursive; word-break:break-word; white-space:normal; min-width:0;">
-                                Family Christmas Photo Board
-                            </span>
-                        </div>
-                        <div class="mt-2 mt-md-0" style="padding-left:10px">
-                            <input type="file" class="form-control btn fileInput" id="fileInput" accept=".bmp, .png, .jpg, .jpeg, .gif, .tiff"
-                                   style="max-width: 250px; background: #fff; color: #333; border-radius: 8px;"
-                                   onchange="javascript:ImageUpload()" />
-                        </div>
-                    </div>
-                </nav>
-            </header> *@
             <header class="xmas-header" style="padding:10px; border-radius: 5px;">
                 <span class="navbar-brand mb-0 h1 text-wrap" style="font-size:2rem; color: #fff; font-family: 'Segoe Script', cursive; word-break:break-word; white-space:normal; min-width:0;">
                     🎅 Family Christmas Photo Board
                 </span>
                 <div style="padding:8px">
-                    <input type="file" id="fileInput" accept="image/*" class="form-control btn fileInput"
-                        onchange="javascript:ImageUpload()">
+                    <label for="fileInput" class="btn btn-dark">Select Image</label>
+                    <input type="file" id="fileInput" accept="image/*" class="form-control btn fileInput" style="display:none"
+                        onchange="javascript:ImageUpload()" />
                 </div>
             </header>
         </div>
