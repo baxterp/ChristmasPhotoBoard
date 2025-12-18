@@ -7,3 +7,12 @@ body {
 .xmas-header {
     background-color: rgb(55 90 127) !important;
 }
+
+.xmas-title {
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Segoe Script', cursive;
+    word-break: break-word;
+    white-space: normal;
+    min-width: 0;
+}
