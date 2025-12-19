@@ -1,0 +1,36 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Christmas Photo Board";
+    Layout = "/Pages/Shared/_Layout.cshtml";
+    var images = Model;
+}
+
+<div class="row g-4" style="padding-top: 20px; padding-bottom: 20px">
+    <div class="col">
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            @foreach (var imageUrl in images)
+            {
+                var activeClass = imageUrl == images[0] ? "active" : "";
+                <div class="carousel-item @activeClass" data-bs-interval="2000" >
+                    <img src="@imageUrl" class="d-block w-100" style="z-index: -999;" />
+                </div>
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#btnChangeView').html('Show Image List');
+        $("#snow").fallingSnow();
+    });
+</script>

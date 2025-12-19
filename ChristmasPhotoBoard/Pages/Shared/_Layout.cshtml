@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ChristmasPhotoBoard</title>
+    <title>Christmas Photo Board</title>
+    <link rel="icon" type="image/x-icon" href="~/img/favicon.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/darkly.bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/jquery.fallingsnow.css" />
     <link rel="stylesheet" href="~/css/jquery.lightbox.css" />
     <link rel="stylesheet" href="~/ChristmasPhotoBoard.styles.css" asp-append-version="true" />
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     <div id="snow">
@@ -19,9 +20,14 @@
                     🎅 Family Christmas Photo Board
                 </span>
                 <div style="padding:8px">
-                    <label for="fileInput" class="btn btn-dark">Select Image</label>
+                    <button id="btnChangeView" type="button"
+                            class="btn btn-dark mb-0"
+                            
+                            onclick="javascript:GotoOther()"></button>
+                    <br />
+                    <label for="fileInput" class="btn btn-dark mb-0" style="margin-top:10px" >Upload Image</label>
                     <input type="file" id="fileInput" accept="image/*" class="form-control btn fileInput" style="display:none"
-                        onchange="javascript:ImageUpload()" />
+                           onchange="javascript:ImageUpload()" />
                 </div>
             </header>
         </div>
@@ -31,7 +37,6 @@
             </main>
         </div>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

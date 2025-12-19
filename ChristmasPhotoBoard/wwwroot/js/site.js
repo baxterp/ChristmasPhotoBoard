@@ -16,6 +16,8 @@ function ImageUpload() {
     return;
   }
 
+	var currentPage = window.location.href;
+
   const formData = new FormData();
   formData.append('file', fileInput.files[0]);
 
@@ -33,11 +35,21 @@ function ImageUpload() {
     .then(summary => {
       fileInput.value = '';
       HideOverlay();
-      window.location.href = '';
+			window.location.href = currentPage; // refresh the page
     })
     .catch(error => {
       console.log(error);
     });
+}
+
+function GotoOther() {
+  console.log(window.location.href);
+  if (window.location.href.includes('Carousel')) {
+    window.location.href = '/';
+  }
+  else {
+    window.location.href = '/Home/Carousel';
+  }
 }
 
 $(function () {
@@ -46,5 +58,10 @@ $(function () {
 
   $("#snow").fallingSnow();
 
-  $('.lazy').Lazy();
+  $('.lazy').Lazy({
+    effect: "fadeIn",
+    effectTime: 500,
+    threshold: 0
+  });
+
 });
